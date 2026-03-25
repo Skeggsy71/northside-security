@@ -1,4 +1,12 @@
+import Image from "next/image";
 import { WHY_ITEMS } from "@/lib/constants";
+
+const WHY_ICONS: Record<string, string> = {
+  "Clean, Professional Installs": "/icons/clean_install.png",
+  "No Ongoing Subscriptions": "/icons/no_subscriptions.png",
+  "Your Technician, Your Support": "/icons/local_technician.png",
+  "Fair, Transparent Pricing": "/icons/fair_pricing.png",
+};
 
 export function WhySection() {
   return (
@@ -8,9 +16,13 @@ export function WhySection() {
         <div className="grid gap-8 md:grid-cols-2">
           {WHY_ITEMS.map((item) => (
             <div key={item.title} className="flex gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
-                <item.icon className="h-5 w-5 text-accent" />
-              </div>
+              <Image
+                src={WHY_ICONS[item.title]}
+                alt={item.title}
+                width={48}
+                height={48}
+                className="shrink-0"
+              />
               <div>
                 <h3 className="mb-1 font-bold text-white">{item.title}</h3>
                 <p className="text-sm text-slate-400">{item.description}</p>

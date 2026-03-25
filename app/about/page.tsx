@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Shield, ShieldCheck, MapPin } from "lucide-react";
+import Image from "next/image";
 import { BUSINESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -28,14 +28,14 @@ export default function AboutPage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="flex gap-4 rounded-xl border border-border bg-navy-900/50 p-6">
-            <Shield className="h-8 w-8 shrink-0 text-accent" />
+            <Image src="/icons/wa_police_licensed.png" alt="WA Police Licensed" width={48} height={48} className="shrink-0" />
             <div>
               <h3 className="font-bold text-white">WA Police Licensed</h3>
               <p className="mt-1 text-sm text-slate-400">Security Agent Licence issued by WA Police. We operate legally and professionally under the Security and Related Activities (Control) Act.</p>
             </div>
           </div>
           <div className="flex gap-4 rounded-xl border border-border bg-navy-900/50 p-6">
-            <ShieldCheck className="h-8 w-8 shrink-0 text-accent" />
+            <Image src="/icons/fully_insured.png" alt="Fully Insured" width={48} height={48} className="shrink-0" />
             <div>
               <h3 className="font-bold text-white">Fully Insured</h3>
               <p className="mt-1 text-sm text-slate-400">Public liability insurance covers every installation. Your property and our workmanship are protected.</p>
@@ -44,7 +44,7 @@ export default function AboutPage() {
         </div>
 
         <div className="flex gap-4 rounded-xl border border-border bg-navy-900/50 p-6">
-          <MapPin className="h-8 w-8 shrink-0 text-cta" />
+          <Image src="/icons/service_area.png" alt="Service Area" width={48} height={48} className="shrink-0" />
           <div>
             <h3 className="font-bold text-white">Service Area</h3>
             <p className="mt-1 text-slate-400">We cover Perth&apos;s northern suburbs — Joondalup, Wanneroo, and surrounding areas north of the Swan River. If you&apos;re in the northern corridor, we&apos;re your local team.</p>
