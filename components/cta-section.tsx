@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -13,7 +14,7 @@ export function CTASection() {
           href="/contact"
           className="inline-block rounded-md bg-cta px-8 py-4 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-amber-400"
         >
-          Book Your Free Site Check →
+          Book Your Free Site Check <ArrowRight className="ml-1 inline h-4 w-4" />
         </Link>
       </div>
     </section>

@@ -25,14 +25,14 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs font-medium uppercase tracking-widest text-slate-400 transition-colors hover:text-white"
+              className="text-xs font-medium uppercase tracking-widest text-slate-300 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="rounded-md bg-cta px-4 py-2 text-xs font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-amber-400"
+            className="rounded-md bg-cta px-4 py-3 text-xs font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-amber-400"
           >
             Free Site Check
           </Link>
@@ -42,13 +42,15 @@ export function Nav() {
           onClick={() => setOpen(!open)}
           className="flex h-10 w-10 items-center justify-center rounded-md text-slate-400 md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-border px-4 pb-4 md:hidden">
+        <div id="mobile-menu" className="border-t border-border px-4 pb-4 md:hidden">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
