@@ -1,0 +1,24 @@
+import Link from "next/link";
+import { PACKAGES } from "@/lib/constants";
+
+export function PricingSnapshot() {
+  return (
+    <section className="mx-auto max-w-6xl px-4 py-16">
+      <h2 className="mb-2 text-xs font-bold uppercase tracking-[4px] text-cta">CCTV Packages</h2>
+      <p className="mb-8 text-slate-400">Essential tier — professional installation included.</p>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {PACKAGES.map((pkg) => (
+          <div key={pkg.name} className={`rounded-lg border p-5 ${pkg.popular ? "border-cta bg-cta/5" : "border-border bg-navy-900/50"}`}>
+            {pkg.popular && <span className="mb-2 inline-block text-[10px] font-bold uppercase tracking-widest text-cta">Popular</span>}
+            <p className="text-sm text-slate-400">{pkg.name}</p>
+            <p className="my-1 text-2xl font-black text-white">{pkg.price}</p>
+            <p className="text-xs text-slate-500">{pkg.cameras} · {pkg.nvr}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-6">
+        <Link href="/packages" className="text-sm font-medium text-accent hover:text-blue-400">View all packages & inclusions →</Link>
+      </div>
+    </section>
+  );
+}
