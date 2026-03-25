@@ -17,8 +17,8 @@ export default function PackagesPage() {
 
       <div className="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {PACKAGES.map((pkg) => (
-          <div key={pkg.name} className={`rounded-xl border p-6 transition-all duration-300 hover:border-cta hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:scale-[1.02] ${pkg.popular ? "border-cta bg-cta/5 shadow-[0_0_20px_rgba(245,158,11,0.1)]" : "border-border bg-navy-900/50"}`}>
-            {pkg.popular && <span className="mb-3 inline-block rounded-full bg-cta/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-cta">Most Popular</span>}
+          <div key={pkg.name} className={`relative flex flex-col rounded-xl border p-6 transition-all duration-300 hover:border-cta hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:scale-[1.02] ${pkg.popular ? "border-cta bg-cta/5 shadow-[0_0_20px_rgba(245,158,11,0.1)]" : "border-border bg-navy-900/50"}`}>
+            {pkg.popular && <span className="absolute -top-3 left-4 rounded-full bg-cta px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-navy-950">Most Popular</span>}
             <h3 className="text-lg font-bold text-white">{pkg.name}</h3>
             <p className="my-2 text-3xl font-black text-white">From {pkg.price}</p>
             <div className="mt-4 space-y-2 text-sm text-slate-400">
@@ -26,7 +26,7 @@ export default function PackagesPage() {
               <p>{pkg.nvr} NVR</p>
               <p>{pkg.storage} storage</p>
             </div>
-            <Link href="/contact" className="mt-6 block rounded-md bg-cta py-3 text-center text-sm font-bold uppercase text-navy-950 transition-colors hover:bg-amber-400">Get a Quote</Link>
+            <Link href="/contact" className="mt-auto block rounded-md bg-cta py-3 text-center text-sm font-bold uppercase text-navy-950 transition-colors hover:bg-amber-400 pt-6">Get a Quote</Link>
           </div>
         ))}
       </div>
